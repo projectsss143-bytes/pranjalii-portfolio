@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pranjali Ahire - Designer Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #0a0a0a;
+            color: #e8e8e8;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1100;
+            background: #1a1a1a;
+            border-bottom: 1px solid rgba(255, 107, 53, 0.2);
+            padding: 1.2rem 0;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ff6b35;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-menu a {
+            color: #e8e8e8;
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-menu a:hover {
+            color: #ff6b35;
+        }
+
+        /* Hero Section - Two Column Layout */
+        .hero-section {
+            min-height: 100vh;
+            background-color: #0a0a0a;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 4rem 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero-text {
+            padding-right: 2rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #999999;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: #ff6b35;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #e8e8e8;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: #ff6b35;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 2px solid #ff6b35;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .hero-button:hover {
+            background-color: #ff6b35;
+            color: #0a0a0a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 1.2rem;
+            border: 2px solid rgba(255, 107, 53, 0.15);
+        }
+
+        /* Carousel Section */
+        .carousel-wrapper {
+            width: 100vw;
+            overflow: hidden;
+            background: #0a0a0a;
+            position: relative;
+            padding-bottom: 6rem;
+        }
+
+        .carousel-container {
+            display: flex;
+            width: 400vw;
+            transition: transform 0.7s cubic-bezier(0.7, 0.13, 0.26, 0.96);
+        }
+
+        /* Carousel Slide - Two Column Layout */
+        .carousel-slide {
+            width: 100vw;
+            min-height: 90vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 4rem 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .slide-image {
+            width: 100%;
+            height: 450px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 1.2rem;
+            border: 2px solid rgba(255, 107, 53, 0.15);
+        }
+
+        .slide-content {
+            padding-left: 2rem;
+        }
+
+        .slide-heading {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ff6b35;
+            margin-bottom: 1.5rem;
+        }
+
+        .slide-description {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #e8e8e8;
+            margin-bottom: 2.5rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .info-item {
+            background: #1a1a1a;
+            padding: 1.2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 107, 53, 0.15);
+        }
+
+        .info-label {
+            font-size: 0.85rem;
+            color: #999999;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-value {
+            font-size: 1.1rem;
+            color: #e8e8e8;
+            font-weight: 600;
+        }
+
+        /* Dots Navigation */
+        .dots-nav {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 30;
+            background: rgba(26, 26, 26, 0.8);
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+        }
+
+        .dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #666;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .dot:hover {
+            background-color: #ff6b35;
+            transform: scale(1.2);
+        }
+
+        .dot.active {
+            background-color: #ff6b35;
+            transform: scale(1.3);
+            box-shadow: 0 0 15px rgba(255, 107, 53, 0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-section,
+            .carousel-slide {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-text,
+            .slide-content {
+                padding: 0;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .slide-heading {
+                font-size: 2.2rem;
+            }
+
+            .hero-image,
+            .slide-image {
+                height: 350px;
+            }
+        }
+
+        /* Portfolio Content Styles */
+        .portfolio-content {
+            max-height: 70vh;
+            overflow-y: auto;
+            padding-right: 1.5rem;
+        }
+
+        .portfolio-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .portfolio-content::-webkit-scrollbar-track {
+            background: #1a1a1a;
+            border-radius: 10px;
+        }
+
+        .portfolio-content::-webkit-scrollbar-thumb {
+            background: #ff6b35;
+            border-radius: 10px;
+        }
+
+        .portfolio-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ff6b35;
+            margin-bottom: 1rem;
+        }
+
+        .project-item {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 107, 53, 0.1);
+        }
+
+        .project-item:last-child {
+            border-bottom: none;
+        }
+
+        .project-name {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #e8e8e8;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-role {
+            font-size: 0.95rem;
+            color: #999999;
+            margin-bottom: 0.8rem;
+            font-style: italic;
+        }
+
+        .project-overview {
+            font-size: 1rem;
+            color: #e8e8e8;
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+        }
+
+        .project-label {
+            font-size: 0.95rem;
+            color: #e8e8e8;
+            font-weight: 600;
+            margin-top: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-list {
+            list-style: none;
+            padding-left: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .project-list li {
+            font-size: 0.95rem;
+            color: #e8e8e8;
+            line-height: 1.6;
+            margin-bottom: 0.4rem;
+            position: relative;
+            padding-left: 0.5rem;
+        }
+
+        .project-list li:before {
+            content: "•";
+            position: absolute;
+            left: -0.8rem;
+            color: #ff6b35;
+        }
+
+        .project-focus {
+            font-size: 0.95rem;
+            color: #e8e8e8;
+            line-height: 1.6;
+            margin-top: 0.8rem;
+        }
+
+        .section-description {
+            font-size: 1rem;
+            color: #e8e8e8;
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+        }
+
+        .section-impact {
+            font-size: 0.95rem;
+            color: #e8e8e8;
+            line-height: 1.6;
+            margin-top: 1rem;
+            font-style: italic;
+            padding-left: 1rem;
+            border-left: 3px solid #ff6b35;
+        }
+
+        .skills-list {
+            list-style: none;
+            padding-left: 1.2rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.6rem;
+        }
+
+        .skills-list li {
+            font-size: 0.95rem;
+            color: #e8e8e8;
+            line-height: 1.5;
+            position: relative;
+            padding-left: 0.5rem;
+        }
+
+        .skills-list li:before {
+            content: "•";
+            position: absolute;
+            left: -0.8rem;
+            color: #ff6b35;
+        }
+
+        /* Modal Styles */
+        .modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.92);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    padding: 1.5rem 0.4rem;
+}
+
+        .modal-content {
+    background: #1a1a1a;
+    border-radius: 16px;
+    max-width: min(800px, 90vw);
+    width: 100%;
+    max-height: 80vh;
+    padding: 2.2rem 2rem 2rem 2rem;
+    position: relative;
+    border: 1px solid rgba(255, 107, 53, 0.2);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: modalSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Scrollable modal area for content */
+.works-container {
+    flex: 1 1 auto;
+    min-height: 0; /* for Safari flex scroll */
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+@media (max-width: 600px) {
+    .modal-content {
+        padding: 1.1rem 0.5rem 1rem 0.5rem;
+        max-width: 98vw;
+        border-radius: 7px;
+    }
+    .modal-title {
+        font-size: 1.2rem;
+    }
+    .modal-subtitle {
+        font-size: 0.83rem;
+    }
+}
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            color: #ff6b35;
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            transition: color 0.2s ease, filter 0.2s;
+            z-index: 20;
+            line-height: 1;
+            font-weight: 700;
+            padding: 0;
+        }
+
+        .modal-close:hover {
+            color: #ff944d;
+            filter: brightness(1.25);
+            cursor: pointer;
+            text-shadow: 0 1px 8px rgba(255,107,53,0.16), 0 1px 1px #000;
+        }
+
+        .modal-close:active {
+            color: #ff6b35;
+            filter: brightness(0.95);
+        }
+
+        .modal-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ff6b35;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-subtitle {
+            font-size: 1.1rem;
+            color: #999;
+            margin-bottom: 2.5rem;
+        }
+
+        .works-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .work-card {
+            background: #0a0a0a;
+            border: 1px solid rgba(255, 107, 53, 0.15);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .work-card:hover {
+            border-color: rgba(255, 107, 53, 0.4);
+            box-shadow: 0 8px 24px rgba(255, 107, 53, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .pdf-preview {
+            width: 100%;
+            height: 160px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            border: 2px solid rgba(255, 107, 53, 0.2);
+        }
+
+        .pdf-icon {
+            filter: drop-shadow(0 2px 8px rgba(255, 107, 53, 0.3));
+        }
+
+        .work-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .work-author,
+        .work-size {
+            font-size: 0.85rem;
+            color: #999;
+            font-weight: 500;
+        }
+
+        .work-badge {
+            background: rgba(34, 197, 94, 0.15);
+            color: #22c55e;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
+        .work-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .work-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #e8e8e8;
+            line-height: 1.3;
+            flex: 1;
+        }
+
+        .work-badge {
+            background: rgba(255, 107, 53, 0.15);
+            color: #ff6b35;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .work-description {
+            font-size: 0.95rem;
+            color: #e8e8e8;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .work-topics,
+        .work-projects {
+            margin-bottom: 1.5rem;
+        }
+
+        .topics-label {
+            font-size: 0.9rem;
+            color: #ff6b35;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .topics-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .topics-list li {
+            font-size: 0.9rem;
+            color: #e8e8e8;
+            padding: 0.4rem 0;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .topics-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #ff6b35;
+            font-weight: bold;
+        }
+
+        .project-detail {
+            margin-bottom: 1.2rem;
+            padding: 1rem;
+            background: rgba(255, 107, 53, 0.05);
+            border-radius: 8px;
+            border-left: 3px solid #ff6b35;
+        }
+
+        .project-detail:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-detail-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-detail-header strong {
+            font-size: 0.95rem;
+            color: #e8e8e8;
+            font-weight: 600;
+        }
+
+        .project-type {
+            font-size: 0.75rem;
+            color: #ff6b35;
+            font-weight: 600;
+            background: rgba(255, 107, 53, 0.1);
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            white-space: nowrap;
+        }
+
+        .project-detail-desc {
+            font-size: 0.85rem;
+            color: #ccc;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .download-button {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            background: #ff6b35;
+            color: #0a0a0a;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .download-button:hover {
+            background: #ff7d4d;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        .download-button:active {
+            transform: translateY(0);
+        }
+
+        .download-button svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .modal-footer-info {
+            margin-top: 2.5rem;
+            padding: 1.5rem;
+            background: rgba(255, 107, 53, 0.08);
+            border-radius: 10px;
+            border-left: 4px solid #ff6b35;
+        }
+
+        .modal-footer-info h4 {
+            font-size: 1.1rem;
+            color: #ff6b35;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .modal-footer-info p {
+            font-size: 0.95rem;
+            color: #e8e8e8;
+            line-height: 1.6;
+            margin-bottom: 0.6rem;
+        }
+
+        .modal-footer-info p:last-child {
+            margin-bottom: 0;
+        }
+
+        .modal-footer-info strong {
+            color: #ff6b35;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .modal {
+                padding: 1rem;
+            }
+
+            .modal-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .modal-title {
+                font-size: 1.8rem;
+                padding-right: 2rem;
+            }
+
+            .modal-subtitle {
+                font-size: 0.95rem;
+            }
+
+            .modal-close {
+                top: 1rem;
+                right: 1rem;
+                font-size: 2rem;
+            }
+
+            .works-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .work-card {
+                padding: 1.5rem;
+            }
+
+            .work-title {
+                font-size: 1.2rem;
+            }
+
+            .work-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 0 1.5rem;
+            }
+
+            .nav-menu {
+                gap: 1.2rem;
+            }
+
+            .nav-menu a {
+                font-size: 0.8rem;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .slide-heading {
+                font-size: 1.8rem;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-content {
+                max-height: 60vh;
+                padding-right: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            .project-name {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">Pranjali Ahire</div>
+            <ul class="nav-menu">
+                <li><a href="#hero">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="#portfolio">PORTFOLIO</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-text">
+            <div class="hero-subtitle">Hi There! I'm</div>
+            <h1 class="hero-title">Graphic Designer</h1>
+            <p class="hero-description">I create compelling visual designs that blend creativity with functionality. Specializing in branding, digital design, and creative storytelling through stunning visuals.</p>
+            <button onclick="openWorksModal()" class="hero-button">View My Works</button>
+        </div>
+        <div class="hero-image"><img src="images/Photo 1.jpg" alt="Photo 1" width="544" height="494" style="border-radius: 10px;"></div>
+    </section>
+
+    <!-- Carousel Section -->
+    <section class="carousel-wrapper">
+        <div id="carousel-container" class="carousel-container">
+            <!-- About Me Slide -->
+            <div id="about" class="carousel-slide">
+                <div class="slide-image"><img src="images/Photo 2.jpg" alt="Photo 2" width="290" height="430" style="border-radius: 10px;"></div>
+                <div class="slide-content">
+                    <h2 class="slide-heading">I'm Pranjali Ahire</h2>
+                    <p class="slide-description">I’m a designer in the learning phase, building my skills step by step through projects, collaborations and real-life experiences. I enjoy exploring different areas of design such as visual communication, graphic design, branding and the basics of UI/UX.
+<br><br>
+My approach to design is simple: observe, understand, research, and then create. I like connecting concepts with visuals, especially around themes like sustainability, awareness, and storytelling.
+<br><br>
+Outside academics, I actively contribute to animal welfare work and have also taken initiative in building a design community in college by starting the first design club. For me, design is not just software and layouts—it’s also about empathy, responsibility and the impact we create.</p>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-label">Date of Birth</div>
+                            <div class="info-value">25/05/2004</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Nationality</div>
+                            <div class="info-value">Indian</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Location</div>
+                            <div class="info-value">Pune, Maharashtra</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Email</div>
+                            <div class="info-value">pranjaliahire05@gmail.com</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Services Slide -->
+            <div id="services" class="carousel-slide">
+                <div class="slide-image"><img src="images/Photo 5 services.jpg" alt="Photo 2" width="340" height="430" style="border-radius: 10px;"></div>
+                <div class="slide-content">
+                    <h2 class="slide-heading">My Services</h2>
+                    <p class="slide-description">Professional design services tailored to your needs</p>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-label">Branding</div>
+                            <div class="info-value">Logo &amp; Identity</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Digital Design</div>
+                            <div class="info-value">Web &amp; Mobile</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Illustration</div>
+                            <div class="info-value">Custom Art</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Motion</div>
+                            <div class="info-value">Animation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Portfolio Slide -->
+            <div id="portfolio" class="carousel-slide">
+                <div class="slide-image"><img src="images/photo 6.jpg" alt="Photo 2" width="340" height="430" style="border-radius: 10px;"></div>
+                <div class="slide-content portfolio-content">
+                    <h2 class="slide-heading">My Work &amp; Initiatives</h2>
+                    
+                    <!-- Projects Section -->
+                    <div class="portfolio-section">
+                        <h3 class="section-title">🔹 Projects</h3>
+                        
+                        <div class="project-item">
+                            <h4 class="project-name">1) Sustainable Awareness Project – Vegan Leather</h4>
+                            <p class="project-role">Role: Research, Concept, Visual Communication</p>
+                            <p class="project-overview"><strong>Overview:</strong> Worked on a project around vegan leather to understand sustainable alternatives to animal leather.</p>
+                            <p class="project-label">What I Did:</p>
+                            <ul class="project-list">
+                                <li>Researched materials, pros and cons of vegan leather</li>
+                                <li>Structured information in a simple, visual way</li>
+                                <li>Created awareness-based design outcomes (posters/visuals) to communicate benefits and ethical reasons</li>
+                            </ul>
+                            <p class="project-focus"><strong>Focus:</strong> Sustainability, awareness, visual storytelling.</p>
+                        </div>
+
+                        <div class="project-item">
+                            <h4 class="project-name">2) Graphic Design &amp; Branding Explorations</h4>
+                            <p class="project-role">Role: Designer (learning stage)</p>
+                            <p class="project-label">What I Worked On:</p>
+                            <ul class="project-list">
+                                <li>Posters and layouts</li>
+                                <li>Basic logo and visual identity explorations</li>
+                                <li>Playing with type, color palettes and composition</li>
+                            </ul>
+                            <p class="project-focus"><strong>Focus:</strong> Understanding how visuals communicate mood, personality and message of a brand.</p>
+                        </div>
+
+                        <div class="project-item">
+                            <h4 class="project-name">3) UI/UX Learning &amp; Concept Screens</h4>
+                            <p class="project-role">Role: Beginner UI/UX Designer</p>
+                            <p class="project-label">What I Explored:</p>
+                            <ul class="project-list">
+                                <li>Basic wireframes and app screens</li>
+                                <li>Simple user flows and navigation</li>
+                                <li>Visual UI elements in tools like Figma</li>
+                            </ul>
+                            <p class="project-focus"><strong>Focus:</strong> Learning how to make interfaces clean, simple and easy to use, even at a beginner level.</p>
+                        </div>
+                    </div>
+
+                    <!-- Volunteering Section -->
+                    <div class="portfolio-section">
+                        <h3 class="section-title">🔹 Volunteering – Animal Welfare</h3>
+                        <p class="section-description">I actively volunteer in animal welfare, especially for rescued puppies and street animals.</p>
+                        <p class="project-label">What I Do:</p>
+                        <ul class="project-list">
+                            <li>Help in rescuing and taking care of puppies/strays</li>
+                            <li>Support in feeding, cleaning and basic care</li>
+                            <li>Assist in finding safe homes and adoptions</li>
+                            <li>Spread awareness among students and friends</li>
+                        </ul>
+                        <p class="section-impact">This work has taught me empathy, responsibility and how important small actions can be in someone's life—even if that someone is an animal.</p>
+                    </div>
+
+                    <!-- Initiative Section -->
+                    <div class="portfolio-section">
+                        <h3 class="section-title">🔹 Initiative – First Design Club</h3>
+                        <p class="section-description">I helped initiate the first design club in my college.</p>
+                        <p class="project-label">What this included:</p>
+                        <ul class="project-list">
+                            <li>Coming up with the idea and purpose of the club</li>
+                            <li>Encouraging students to join, share work and learn together</li>
+                            <li>Creating a space for discussions, feedback sessions and creative growth</li>
+                        </ul>
+                        <p class="section-impact">This experience helped me learn leadership, teamwork and how to build a creative community from scratch.</p>
+                    </div>
+
+                    <!-- Skills Section -->
+                    <div class="portfolio-section">
+                        <h3 class="section-title">🔹 Skills (Still Growing)</h3>
+                        <ul class="skills-list">
+                            <li>Creative thinking &amp; ideation</li>
+                            <li>Basic visual communication</li>
+                            <li>Poster and layout design</li>
+                            <li>Intro branding &amp; identity experiments</li>
+                            <li>UI/UX fundamentals (wireframes, simple screens)</li>
+                            <li>Learning tools: Adobe Photoshop, Illustrator, Figma</li>
+                            <li>Teamwork, initiative &amp; volunteering</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Contact Slide -->
+            <div id="contact" class="carousel-slide">
+                <div class="slide-image"><img src="images/Photo 4 contact me.jpg" alt="Photo 2" width="340" height="430" style="border-radius: 10px;"></div>
+                <div class="slide-content">
+                    <h2 class="slide-heading">Get In Touch</h2>
+                    <p class="slide-description">Let's connect and create something amazing together</p>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-label">Email</div>
+                            <div class="info-value">pranjaliahire05@gmail.com</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Phone</div>
+                            <div class="info-value">+91 82379 28542 </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Location</div>
+                            <div class="info-value">Pune, Maharashtra</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Skype</div>
+                            <div class="info-value">pranjali.ahire</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Dots Navigation -->
+        <nav class="dots-nav">
+            <div class="dot active" data-slide="0"></div>
+            <div class="dot" data-slide="1"></div>
+            <div class="dot" data-slide="2"></div>
+            <div class="dot" data-slide="3"></div>
+        </nav>
+    </section>
+
+    <!-- Downloads Modal -->
+    <div id="worksModal" class="modal">
+        <div class="modal-content">
+            <button type="button" class="modal-close" id="worksModalCloseBtn" aria-label="Close Modal" title="Close Modal">&#10005;</button>
+            <h2 class="modal-title">My Works</h2>
+            <p class="modal-subtitle">Download the complete portfolio PDFs showcasing Pranjali Ahire's design work</p>
+            
+            <div class="works-container">
+                <!-- Work 1: Sketching & Drawing -->
+                <div class="work-card">
+                    <div class="pdf-preview">
+                        <svg class="pdf-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <text x="12" y="16" text-anchor="middle" fill="#ff6b35" font-size="6" font-weight="bold">PDF</text>
+                        </svg>
+                    </div>
+                    <div class="work-header">
+                        <h3 class="work-title">Sketching &amp; Drawing</h3>
+                        <span class="work-badge">✅ Available</span>
+                    </div>
+                    <div class="work-meta">
+                        <span class="work-author">👤 Pranjali Ahire (20240401046)</span>
+                        <span class="work-size">📦 2.0 MB (compressed)</span>
+                    </div>
+                    <p class="work-description">Comprehensive sketching portfolio featuring shading techniques, live sketching studies, antique sketches, hand drawing practice, and detailed texture studies (wood, rock, etc.)</p>
+                    
+                    <div class="work-topics">
+                        <h4 class="topics-label">Topics Covered:</h4>
+                        <ul class="topics-list">
+                            <li>Shading Techniques</li>
+                            <li>Live Sketching &amp; Antique Studies</li>
+                            <li>Hand Drawing Practice</li>
+                            <li>Texture Studies (wood, rock, etc.)</li>
+                            <li>Line &amp; Curve Work</li>
+                        </ul>
+                    </div>
+                    
+                    <button class="download-button" onclick="downloadWork('sketching')">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+    </svg>
+	<a href="pdfs/sketching and drawing pranjali ahire_compressed.pdf" download style="color: black; text-decoration: none; target="_blank">
+    Download PDF</a>
+</button>
+                </div>
+
+                <!-- Work 2: Elements of Design -->
+                <div class="work-card">
+                    <div class="pdf-preview">
+                        <svg class="pdf-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <text x="12" y="16" text-anchor="middle" fill="#ff6b35" font-size="6" font-weight="bold">PDF</text>
+                        </svg>
+                    </div>
+                    <div class="work-header">
+                        <h3 class="work-title">Elements of Design &amp; Visualization &amp; Representation</h3>
+                        <span class="work-badge">✅ Available</span>
+                    </div>
+                    <div class="work-meta">
+                        <span class="work-author">👤 Pranjali Ahire (20240401046)</span>
+                        <span class="work-size">📦 2.2 MB (compressed)</span>
+                    </div>
+                    <p class="work-description">Design project showcasing 'Harmony in Still Waters' (mixed media with resin, clay, acrylic) and 'Draupadi Then, Draupadi Now' (Madhubani art with social issue data visualization on bystander effect)</p>
+                    
+                    <div class="work-projects">
+                        <h4 class="topics-label">Featured Projects:</h4>
+                        
+                        <div class="project-detail">
+                            <div class="project-detail-header">
+                                <strong>Harmony in Still Waters</strong>
+                                <span class="project-type">Mixed Media</span>
+                            </div>
+                            <p class="project-detail-desc">Visual representation using resin, clay, acrylic paints, and artificial moss</p>
+                        </div>
+                        
+                        <div class="project-detail">
+                            <div class="project-detail-header">
+                                <strong>Draupadi Then, Draupadi Now</strong>
+                                <span class="project-type">Madhubani Art + Data Viz</span>
+                            </div>
+                            <p class="project-detail-desc">Reflection on bystander effect combining traditional Madhubani art with modern data visualization</p>
+                        </div>
+                    </div>
+                    
+                    <button class="download-button" onclick="downloadWork('design')">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+    </svg>
+	<a href="pdfs/PRANJALI AHIRE ELEMENTS OF DESIGN AND VISUALIZATION AND REPRESENTATION_compressed.pdf" download style="color: black; text-decoration: none; target="_blank" rel="noopener noreferrer">
+    Download PDF
+</a>
+</button>
+                </div>
+
+                <div class="modal-footer-info">
+                    <h4>📌 About These Files</h4>
+                    <p><strong>Compressed PDFs:</strong> These files have been compressed to 2.0 MB and 2.2 MB respectively for easy download while maintaining quality.</p>
+                    <p><strong>Content:</strong> Both portfolios showcase comprehensive design work including sketching techniques, mixed media art, and data visualization projects.</p>
+                    <p><strong>Author:</strong> Pranjali Ahire (Roll No: 20240401046) | <strong>Institution:</strong> DYPIU</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* Carousel Logic */
+        const carouselContainer = document.getElementById('carousel-container');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = 4;
+        let currentSlide = 0;
+        let autoTimer = null;
+        const autoDelay = 30000;
+
+        function setActiveDot(index) {
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            setActiveDot(index);
+            carouselContainer.style.transform = `translateX(-${index * 100}vw)`;
+        }
+
+        function nextSlide() {
+            const next = (currentSlide + 1) % totalSlides;
+            goToSlide(next);
+        }
+
+        function startAutoRotate() {
+            if (autoTimer) clearTimeout(autoTimer);
+            autoTimer = setTimeout(() => {
+                nextSlide();
+                startAutoRotate();
+            }, autoDelay);
+        }
+
+        function stopAutoRotate() {
+            if (autoTimer) clearTimeout(autoTimer);
+        }
+
+        // Dot click handlers
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                stopAutoRotate();
+                goToSlide(index);
+                startAutoRotate();
+            });
+        });
+
+        // Initialize
+        goToSlide(0);
+        startAutoRotate();
+
+        // Handle resize
+        window.addEventListener('resize', () => {
+            carouselContainer.style.transition = 'none';
+            goToSlide(currentSlide);
+            setTimeout(() => {
+                carouselContainer.style.transition = 'transform 0.7s cubic-bezier(0.7, 0.13, 0.26, 0.96)';
+            }, 50);
+        });
+
+        /* Modal Functions */
+        function openWorksModal() {
+            const modal = document.getElementById('worksModal');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            // Focus the new close button for accessibility
+            const closeBtn = document.getElementById('worksModalCloseBtn');
+            if (closeBtn) closeBtn.focus();
+        }
+
+        function closeWorksModal() {
+            const modal = document.getElementById('worksModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // === EMBEDDED PDF DATA ===
+// CRITICAL: Replace the base64 strings below with your ACTUAL PDF files
+// The current base64 strings are PLACEHOLDER test PDFs with minimal content
+//
+// TO FIX THE BLANK PDF ISSUE:
+// 1. Convert your actual PDF files to base64:
+//    - Online: Use https://base64.guru/converter/encode/pdf
+//    - Command line: base64 your-file.pdf > output.txt
+// 2. Copy the ENTIRE base64 string (it will be very long for real PDFs)
+// 3. Replace the placeholder base64 strings below
+// 4. The downloaded PDFs will then contain your actual work
+//
+// File 1: sketching-and-drawing-pranjali-ahire_compressed.pdf (~2MB)
+// File 2: PRANJALI-AHIRE-ELEMENTS-OF-DESIGN-AND-VISUALIZATION-AND-REPRESENTATION_compressed.pdf (~2.2MB)
+
+const PDF_DATA = {
+  sketching: {
+    fileName: 'Sketching-and-Drawing-Pranjali-Ahire.pdf',
+    base64: 'JVBERi0xLjcKJeLjz9MKNSAwIG9iago8PC9UeXBlL1BhZ2UvTWVkaWFCb3hbMCAwIDYxMiA3OTJdL1Jlc291cmNlczw8L0ZvbnQ8PC9GMSAxIDAgUj4+Pj4vQ29udGVudHMgMiAwIFIvUGFyZW50IDQgMCBSPj4KZW5kb2JqCjIgMCBvYmoKPDwvRmlsdGVyL0ZsYXRlRGVjb2RlL0xlbmd0aCAyNzU+PnN0cmVhbQp4nG2Qy07DQAxF9/mKWbKwMuN3JssSukIgQEJFKgsEX8DfYyclVKWlG8uxde+51TzanNy+3J3evvWfH4+vt7dvD/f3X4/Xg5vT/vDw+PIQ3s9uHk8Ph8Pry92bn9PT0/3d7fD+cH//+PJ6f/f0ePL7+Hx4vb+/uXn9/vb96fX+9f7t5fXl9eX+7cnv4/Pr/f3Ly8vL8/PLy+PL8/PT0/Pzy+Pz4+Pj88vT09PT4+Pjw9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09MKCmVuZHN0cmVhbQplbmRvYmoKMSAwIG9iago8PC9UeXBlL0ZvbnQvU3VidHlwZS9UeXBlMS9CYXNlRm9udC9IZWx2ZXRpY2E+PgplbmRvYmoKNCAwIG9iago8PC9UeXBlL1BhZ2VzL0NvdW50IDEvS2lkc1s1IDAgUl0+PgplbmRvYmoKMyAwIG9iago8PC9UeXBlL0NhdGFsb2cvUGFnZXMgNCAwIFI+PgplbmRvYmoKeHJlZgowIDYKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwNDAxIDAwMDAwIG4gCjAwMDAwMDAwOTQgMDAwMDAgbiAKMDAwMDAwMDUyNSAwMDAwMCBuIAowMDAwMDAwNDYyIDAwMDAwIG4gCjAwMDAwMDAwMTUgMDAwMDAgbiAKdHJhaWxlcgo8PC9TaXplIDYvUm9vdCAzIDAgUj4+CnN0YXJ0eHJlZgo1NzQKJSVFT0YK'
+    // ⚠️ PLACEHOLDER - Replace with actual sketching-and-drawing-pranjali-ahire_compressed.pdf base64
+  },
+  design: {
+    fileName: 'Elements-of-Design-Pranjali-Ahire.pdf',
+    base64: 'JVBERi0xLjcKJeLjz9MKNSAwIG9iago8PC9UeXBlL1BhZ2UvTWVkaWFCb3hbMCAwIDYxMiA3OTJdL1Jlc291cmNlczw8L0ZvbnQ8PC9GMSAxIDAgUj4+Pj4vQ29udGVudHMgMiAwIFIvUGFyZW50IDQgMCBSPj4KZW5kb2JqCjIgMCBvYmoKPDwvRmlsdGVyL0ZsYXRlRGVjb2RlL0xlbmd0aCAyNzU+PnN0cmVhbQp4nG2Qy07DQAxF9/mKWbKwMuN3JssSukIgQEJFKgsEX8DfYyclVKWlG8uxde+51TzanNy+3J3evvWfH4+vt7dvD/f3X4/Xg5vT/vDw+PIQ3s9uHk8Ph8Pry92bn9PT0/3d7fD+cH//+PJ6f/f0ePL7+Hx4vb+/uXn9/vb96fX+9f7t5fXl9eX+7cnv4/Pr/f3Ly8vL8/PLy+PL8/PT0/Pzy+Pz4+Pj88vT09PT4+Pjw9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09MKCmVuZHN0cmVhbQplbmRvYmoKMSAwIG9iago8PC9UeXBlL0ZvbnQvU3VidHlwZS9UeXBlMS9CYXNlRm9udC9IZWx2ZXRpY2E+PgplbmRvYmoKNCAwIG9iago8PC9UeXBlL1BhZ2VzL0NvdW50IDEvS2lkc1s1IDAgUl0+PgplbmRvYmoKMyAwIG9iago8PC9UeXBlL0NhdGFsb2cvUGFnZXMgNCAwIFI+PgplbmRvYmoKeHJlZgowIDYKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwNDAxIDAwMDAwIG4gCjAwMDAwMDAwOTQgMDAwMDAgbiAKMDAwMDAwMDUyNSAwMDAwMCBuIAowMDAwMDAwNDYyIDAwMDAwIG4gCjAwMDAwMDAwMTUgMDAwMDAgbiAKdHJhaWxlcgo8PC9TaXplIDYvUm9vdCAzIDAgUj4+CnN0YXJ0eHJlZgo1NzQKJSVFT0YK'
+    // ⚠️ PLACEHOLDER - Replace with actual PRANJALI-AHIRE-ELEMENTS-OF-DESIGN_compressed.pdf base64
+  }
+};
+
+function b64toBlob(b64Data, contentType='application/pdf', sliceSize=512) {
+    // Converts base64 to Blob for download
+    const byteCharacters = atob(b64Data);
+    const byteArrays = [];
+    for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+        const slice = byteCharacters.slice(offset, offset + sliceSize);
+        const byteNumbers = new Array(slice.length);
+        for (let i=0; i < slice.length; i++) {
+            byteNumbers[i] = slice.charCodeAt(i);
+        }
+        byteArrays.push(new Uint8Array(byteNumbers));
+    }
+    return new Blob(byteArrays, { type: contentType });
+}
+
+function downloadWork(type) {
+    let data, fileName;
+    if (type === 'sketching') {
+        data = PDF_DATA.sketching.base64;
+        fileName = PDF_DATA.sketching.fileName;
+    } else if (type === 'design') {
+        data = PDF_DATA.design.base64;
+        fileName = PDF_DATA.design.fileName;
+    } else {
+        return;
+    }
+    
+    if (!data || !fileName) {
+        alert('PDF data not available. Please ensure the PDF base64 strings are embedded.');
+        return;
+    }
+    
+    // Check if using placeholder PDFs (they're very small)
+    if (data.length < 1000) {
+        alert('⚠️ WARNING: The PDFs are currently using placeholder data.\n\nTo fix:\n1. Convert your actual PDF files to base64\n2. Replace the placeholder base64 strings in the code\n3. See the comments in the JavaScript section for instructions\n\nThe downloaded PDF will be blank until you replace the placeholder data.');
+    }
+    
+    try {
+        // Create a blob from base64 (this converts the original PDF back to binary)
+        const blob = b64toBlob(data);
+        const url = URL.createObjectURL(blob);
+        // Download via a temporary link
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = fileName;
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        // Clean up
+        setTimeout(() => {
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }, 200);
+    } catch (error) {
+        console.error('Error downloading PDF:', error);
+        alert('Error downloading PDF. Please check the console.');
+    }
+}
+
+        // Close modal when clicking outside the modal panel
+        document.addEventListener('mousedown', function(event) {
+            const modal = document.getElementById('worksModal');
+            if (!modal || modal.style.display !== 'flex') return;
+            if (event.target === modal) {
+                closeWorksModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            const modal = document.getElementById('worksModal');
+            if (event.key === 'Escape' && modal && modal.style.display === 'flex') {
+                closeWorksModal();
+            }
+        });
+
+        // Allow closing from X button (add event in JS for robustness)
+        document.addEventListener('DOMContentLoaded', function() {
+            var closeBtn = document.getElementById('worksModalCloseBtn');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeWorksModal);
+            }
+        });
+    </script>
+
+
+<!-- NEW PHOTOGRAPHY SECTION -->
+<section class="photography-wrapper">
+    <div class="photography-header">
+        <h2 style="color:#ff6b35;font-size:2.7rem;margin-bottom:1rem;font-weight:800;font-family:inherit;letter-spacing:0.01em">My Photography</h2>
+        <div style="color:#bbb;font-size:1.18rem;margin-bottom:2.4rem;max-width:680px;line-height:1.6;text-align: center;">A curated gallery highlighting my photography interests – food, nature, travel, and wildlife. Scroll through some favorite moments captured in vibrant detail.</div>
+    </div>
+    <div id="photography-carousel" class="carousel-container photography-carousel">
+        <div class="carousel-slide photography-slide">
+            <img src="images/Photo 3 forest.jpg" alt="Noodle Bowl - Food Photography" class="photography-img">
+        </div>
+        <div class="carousel-slide photography-slide">
+            <img src="images/Photo 3 flower.jpg" alt="Purple Flower - Nature Photography" class="photography-img">
+        </div>
+        <div class="carousel-slide photography-slide">
+            <img src="images/Photo 3 temple.jpg" alt="Golden Temple - Architecture" class="photography-img">
+        </div>
+        <div class="carousel-slide photography-slide">
+            <img src="images/Photo 3 mountain.jpg" alt="Blue Flowers in Forest - Landscape" class="photography-img">
+        </div>
+        <div class="carousel-slide photography-slide">
+            <img src="images/Photo 3 food.jpg" alt="Mountain Landscape - Sunset" class="photography-img">
+        </div>
+        <div class="carousel-slide photography-slide">
+            <img src="images/Photo 3 elephant.jpg" alt="Elephant in Forest - Wildlife" class="photography-img">
+        </div>
+    </div>
+    <nav class="dots-nav photography-dots">
+        <div class="dot active" data-photography-slide="0"></div>
+        <div class="dot" data-photography-slide="1"></div>
+        <div class="dot" data-photography-slide="2"></div>
+        <div class="dot" data-photography-slide="3"></div>
+        <div class="dot" data-photography-slide="4"></div>
+        <div class="dot" data-photography-slide="5"></div>
+    </nav>
+</section>
+<script>
+(function(){
+    // === PHOTOGRAPHY CAROUSEL LOGIC ===
+    var TOTAL_PHOTO_SLIDES = 6;
+    var photographyCarousel = document.getElementById('photography-carousel');
+    var photographyDots = document.querySelectorAll('.photography-dots .dot');
+    var currentPhotographySlide = 0;
+    var photoAutoTimer = null;
+    var PHOTO_DELAY = 5000;
+    var photographySlides = document.querySelectorAll('.photography-slide');
+
+    // Responsive width logic
+    function setPhotographySlide(index, instant) {
+        currentPhotographySlide = index;
+        // Activate correct dot
+        photographyDots.forEach(function(dot, i) {
+            if (i === index) dot.classList.add('active');
+            else dot.classList.remove('active');
+        });
+        // Slide carousel
+        if (instant) photographyCarousel.style.transition = 'none';
+        else photographyCarousel.style.transition = 'transform 0.7s cubic-bezier(0.68,0.25,0.36,0.90)';
+        photographyCarousel.style.transform = 'translateX(-'+(index*100)+'vw)';
+    }
+
+    function nextPhotographySlide() {
+        var next = (currentPhotographySlide + 1) % TOTAL_PHOTO_SLIDES;
+        setPhotographySlide(next);
+    }
+
+    function startPhotographyAutoRotate() {
+        if (photoAutoTimer) clearTimeout(photoAutoTimer);
+        photoAutoTimer = setTimeout(function(){
+            nextPhotographySlide();
+            startPhotographyAutoRotate();
+        }, PHOTO_DELAY);
+    }
+    function stopPhotographyAutoRotate() {
+        if (photoAutoTimer) clearTimeout(photoAutoTimer);
+    }
+
+    // Dot click handlers
+    photographyDots.forEach(function(dot, idx){
+        dot.addEventListener('click', function(){
+            stopPhotographyAutoRotate();
+            setPhotographySlide(idx);
+            startPhotographyAutoRotate();
+        });
+    });
+
+    // Touch/drag left/right (optional: not requested, could be added here)
+    // ...
+
+    // On resize, fix the transition to avoid stutter
+    window.addEventListener('resize', function(){
+        setPhotographySlide(currentPhotographySlide,true);
+        setTimeout(function(){
+            photographyCarousel.style.transition = 'transform 0.7s cubic-bezier(0.68,0.25,0.36,0.90)';
+        },50);
+    });
+
+    setPhotographySlide(0, true);
+    startPhotographyAutoRotate();
+})();
+</script>
+<style>
+    /* === PHOTOGRAPHY CAROUSEL STYLES === */
+    .photography-wrapper {
+        background: #0a0a0a;
+        min-height: 680px;
+        width: 100vw;
+        margin-top: 0;
+        border-top: 2px solid #ff6b35;
+        padding-top: 4.5rem;
+        padding-bottom: 6.5rem;
+        box-sizing: border-box;
+    }
+    .photography-header {
+        width: min(900px,96vw);
+        margin: 0 auto 3.1rem auto;
+        text-align: center;
+    }
+    .photography-header h2 {
+        text-shadow: 0 4px 40px #ff6b3533,0 1px 1px #191919;
+    }
+    .photography-carousel {
+        display: flex;
+        width: 600vw;
+        transition: transform .7s cubic-bezier(.68,.25,.36,.90);
+    }
+    .photography-slide {
+        width: 50vw;
+        min-height: 480px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #181818;
+        position: relative;
+        border-radius: 15px;
+        box-sizing: border-box;
+        overflow: hidden;
+        padding: 0;
+    }
+    .photography-img {
+        width: 72vw;
+        height: 100vh;
+        object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0 12px 38px 0 #0a0a0a90, 0 2px 12px #ff6b3577;
+        border: 4px solid #141414;
+        background: #272727;
+    }
+    @media (max-width: 1024px) {
+        .photography-img {
+            width: 89vw;
+            height: 32vh;
+        }
+        .photography-header h2 {
+            font-size: 2rem;
+        }
+        .photography-header div {
+            font-size: 1.01rem;
+        }
+    }
+    @media (max-width: 800px) {
+        .photography-wrapper {
+            min-height: 390px;
+            padding-top: 2.8rem;
+            padding-bottom: 4.1rem;
+        }
+        .photography-header {
+            margin: 0 auto 2.0rem auto;
+        }
+        .photography-header h2 {
+            font-size: 1.35rem;
+        }
+        .photography-img {
+            width: 96vw;
+            height: 24vh;
+        }
+    }
+    /* Dots Navigation for Photography Carousel */
+    .photography-dots {
+        position: absolute;
+        left: 50%;
+        bottom: 2.6rem;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 1.09rem;
+        z-index: 60;
+        background: rgba(26,26,26,0.9);
+        backdrop-filter: blur(10px);
+        padding: 0.8rem 2.3rem;
+        border-radius: 50px;
+        margin-top: 0.8rem;
+        box-shadow: 0 2px 35px #ff6b3522;
+    }
+    .photography-dots .dot {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background-color: #464646;
+        cursor: pointer;
+        border: 2px solid #141414;
+        transition: all 0.23s cubic-bezier(.7,.25,.36,.90);
+        box-sizing: border-box;
+        margin: 0 2px;
+    }
+    .photography-dots .dot:hover {
+        background: #ff6b35;
+        transform: scale(1.18);
+    }
+    .photography-dots .dot.active {
+        background: #ff6b35;
+        border: 2px solid #ff6b35;
+        transform: scale(1.3);
+        box-shadow: 0 0 14px #ff6b357a;
+    }
+
+    /* Make photography carousel position relative to enable dots nav */
+    .photography-wrapper {
+        position: relative;
+    }
+
+    /* Responsive carousel for smaller screens */
+    @media (max-width: 600px) {
+        .photography-carousel {
+            min-height: 160px;
+        }
+        .photography-slide {
+            min-height: 120px;
+        }
+        .photography-img {
+            min-height: 100px;
+            height: 19vh;
+        }
+        .photography-dots {
+            padding: 0.6rem 1.2rem;
+            bottom: 1.3rem;
+        }
+    }
+    /* Add extra bottom margin before footer area (if needed) */
+    .photography-wrapper {
+        margin-bottom: 0.7rem;
+    }
+</style>
+</body>
+</html>
