@@ -8,9 +8,7 @@ A responsive and modern portfolio website showcasing Pranjali Ahire's graphic de
 
 ## 🚀 Live Website
 
-**Visit:** [https://your-username.github.io/pranjali-portfolio](https://your-username.github.io/pranjali-portfolio)
-
-*(Replace `your-username` with your actual GitHub username)*
+**Visit:** [https://projectsss143-bytes.github.io/pranjali-portfolio](https://projectsss143-bytes.github.io/pranjali-portfolio)
 
 ## 📋 About
 
